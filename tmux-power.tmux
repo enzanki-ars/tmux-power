@@ -95,6 +95,8 @@ tmux_set @prefix_highlight_fg "$BG"
 tmux_set @prefix_highlight_bg "$FG"
 tmux_set @prefix_highlight_show_copy_mode 'on'
 tmux_set @prefix_highlight_copy_mode_attr "fg=$TC,bg=$BG,bold"
+tmux_set @prefix_highlight_output_prefix "#[fg=$TC]#[bg=$BG]$left_arrow_icon#[bg=$TC]#[fg=$BG]"
+tmux_set @prefix_highlight_output_suffix "#[fg=$TC]#[bg=$BG]$right_arrow_icon"
 
 #     
 # Left side of status bar
@@ -109,7 +111,6 @@ else
     LS="$LS#[fg=$G06,bg=$BG]$right_arrow_icon"
 fi
 if [[ $prefix_highlight_pos == 'L' || $prefix_highlight_pos == 'LR' ]]; then
-    tmux_set @prefix_highlight_output_prefix "#[fg=$TC]#[bg=$BG]$left_arrow_icon#[bg=$TC]#[fg=$BG]"
     LS="$LS#{prefix_highlight}"
 fi
 tmux_set status-left "$LS"
@@ -126,7 +127,6 @@ if "$show_web_reachable"; then
     RS=" #{web_reachable_status} $RS"
 fi
 if [[ $prefix_highlight_pos == 'R' || $prefix_highlight_pos == 'LR' ]]; then
-    tmux_set @prefix_highlight_output_suffix "#[fg=$TC]#[bg=$BG]$right_arrow_icon"
     RS="#{prefix_highlight}$RS"
 fi
 tmux_set status-right "$RS"
