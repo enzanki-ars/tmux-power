@@ -95,8 +95,8 @@ tmux_set @prefix_highlight_fg "$BG"
 tmux_set @prefix_highlight_bg "$FG"
 tmux_set @prefix_highlight_show_copy_mode 'on'
 tmux_set @prefix_highlight_copy_mode_attr "fg=$TC,bg=$BG,bold"
-tmux_set @prefix_highlight_output_prefix "#[fg=$BG]#[bg=$TC]$right_arrow_icon#[bg=$TC]#[fg=$BG]"
-tmux_set @prefix_highlight_output_suffix "#[fg=$TC]#[bg=$BG]$right_arrow_icon"
+tmux_set @prefix_highlight_output_prefix "#[fg=$BG]#[bg=$TC]$right_arrow_icon#[bg=$TC]#[fg=$BG] "
+tmux_set @prefix_highlight_output_suffix " #[fg=$TC]#[bg=$BG]$right_arrow_icon"
 
 #     
 # Left side of status bar
